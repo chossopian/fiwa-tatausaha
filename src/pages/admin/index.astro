@@ -1,0 +1,46 @@
+---
+import AdminLayout from '../../layouts/AdminLayout.astro';
+
+// Halaman ini WAJIB server-rendered karena butuh cek session (dijaga middleware)
+export const prerender = false;
+
+const user = Astro.locals.user;
+
+const menuItems = [
+  { label: 'Data Karyawan', href: '/admin/staff', icon: '👥', desc: 'Kelola data guru & staf' },
+  { label: 'Data Siswa', href: '/admin/students', icon: '🎓', desc: 'Kelola data santri' },
+  { label: 'Tracer Alumni', href: '/admin/alumni', icon: '🎯', desc: 'Data & pelacakan alumni' },
+  { label: 'Pengumuman', href: '/admin/announcements', icon: '📢', desc: 'Kelola pengumuman & berita' },
+  { label: 'Kalender Akademik', href: '/admin/calendar', icon: '📅', desc: 'Kelola agenda & jadwal' },
+  { label: 'Galeri', href: '/admin/gallery', icon: '🖼️', desc: 'Kelola dokumentasi foto' },
+];
+---
+
+<AdminLayout title="Dashboard">
+  <div class="w-full max-w-6xl mx-auto px-6 py-10 space-y-8">
+    <div class="flex items-center justify-between">
+      <div>
+        <h1 class="text-2xl font-black text-slate-900">Dashboard Tata Usaha</h1>
+        <p class="text-sm text-slate-500">Selamat datang, {user?.email}</p>
+      </div>
+      <form method="POST" action="/admin/logout">
+        <button type="submit" class="text-sm font-bold text-red-600 hover:text-red-700 border border-red-200 hover:bg-red-50 rounded-lg px-4 py-2 transition">
+          Keluar
+        </button>
+      </form>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {menuItems.map((item) => (
+        <a
+          href={item.href}
+          class="bg-white rounded-2xl border border-slate-200 p-6 hover:border-blue-400 hover:shadow-lg transition-all duration-200 space-y-2"
+        >
+          <span class="text-3xl">{item.icon}</span>
+          <h3 class="font-bold text-slate-900">{item.label}</h3>
+          <p class="text-xs text-slate-500">{item.desc}</p>
+        </a>
+      ))}
+    </div>
+  </div>
+</AdminLayout>

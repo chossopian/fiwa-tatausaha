@@ -1,0 +1,35 @@
+---
+import '../styles/global.css';
+---
+
+<html lang="id">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>FIWA Parent & Student Portal</title>
+	</head>
+	<body class="min-h-screen bg-slate-50 text-slate-900 antialiased">
+		<main class="max-w-3xl mx-auto px-6 py-16 space-y-8">
+			<div class="space-y-2">
+				<h1 class="text-3xl font-black">FIWA Parent & Student Portal</h1>
+				<p class="text-slate-500">Scaffold awal — daftar halaman yang sudah tersedia:</p>
+			</div>
+
+			<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+				<a href="/staff" class="block bg-white border border-slate-200 rounded-xl p-4 hover:border-blue-400 transition">Direktori Guru & Staf</a>
+				<a href="/calendar" class="block bg-white border border-slate-200 rounded-xl p-4 hover:border-blue-400 transition">Kalender Akademik</a>
+				<a href="/gallery" class="block bg-white border border-slate-200 rounded-xl p-4 hover:border-blue-400 transition">Galeri</a>
+				<a href="/parent/policies" class="block bg-white border border-slate-200 rounded-xl p-4 hover:border-blue-400 transition">Parent: Tata Tertib</a>
+				<a href="/parent/canteen" class="block bg-white border border-slate-200 rounded-xl p-4 hover:border-blue-400 transition">Parent: Menu Gizi</a>
+				<a href="/parent/circulars" class="block bg-white border border-slate-200 rounded-xl p-4 hover:border-blue-400 transition">Parent: Surat Edaran</a>
+				<a href="/parent/surveys" class="block bg-white border border-slate-200 rounded-xl p-4 hover:border-blue-400 transition">Parent: Survei</a>
+				<a href="/student/timetable" class="block bg-white border border-slate-200 rounded-xl p-4 hover:border-blue-400 transition">Student: Jadwal Pelajaran</a>
+				<a href="/student/career" class="block bg-white border border-slate-200 rounded-xl p-4 hover:border-blue-400 transition">Student: Karir & Studi</a>
+				<a href="/student/elibrary" class="block bg-white border border-slate-200 rounded-xl p-4 hover:border-blue-400 transition">Student: E-Library</a>
+				<a href="/admin/login" class="block bg-blue-700 text-white rounded-xl p-4 hover:bg-blue-800 transition font-bold">🔒 Admin Login</a>
+			</div>
+		</main>
+	</body>
+</html>
